@@ -4,12 +4,14 @@ import Test from "../component/_test_/Test";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
 import LogIn from "../pages/Login/Login";
+import NotFound from "../pages/NotFound/NotFound";
+import AllAssignments from "../pages/AllAssignments/AllAssignments";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <p>404</p>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         index: true,
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <LogIn></LogIn>,
+      },
+      {
+        path: "allassignments",
+        element: <AllAssignments></AllAssignments>,
       },
       {
         path: "/test",

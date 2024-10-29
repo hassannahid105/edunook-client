@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { logOut, user } = useAuth();
+  const { logOut, user, isLoading } = useAuth();
   const handleLogOut = () => {
     logOut();
   };
+  if (isLoading) {
+    return <p>loading spinner comming......</p>;
+  }
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
@@ -78,6 +81,13 @@ const Navbar = () => {
               Home
             </Link>
             <Link
+              to="/allassignments"
+              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              href="#"
+            >
+              Assignments
+            </Link>
+            <Link
               to="/login"
               className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
@@ -99,19 +109,18 @@ const Navbar = () => {
               Register
             </Link>
           </div>
-
           <div className="flex justify-center md:block">
-            <p className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
+            <div className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
               {/* ============================================================================================= */}
               <div className="relative inline-block">
                 {/* Dropdown toggle button */}
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="relative z-10 block text-gray-700 bg-white rounded-full dark:text-white focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:bg-gray-800 focus:outline-none"
+                  className="relative z-10 block text-gray-700 bg-white rounded-full dark:text-white"
                 >
                   <img
                     className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
-                    src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBibHVlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=face&w=500&q=200"
+                    src={user?.photoURL}
                     alt="jane avatar"
                   />
                 </button>
@@ -213,7 +222,7 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>

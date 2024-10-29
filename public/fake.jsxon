@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Math Homework",
+    "description": "Solve 10 algebra problems from the textbook.",
+    "marks": 20,
+    "date": "2024-10-30",
+    "thumbnail": "https://example.com/images/math-homework.jpg",
+    "difficulty": "easy"
+  },
+  {
+    "title": "History Essay",
+    "description": "Write a 2-page essay on World War II.",
+    "marks": 30,
+    "date": "2024-11-02",
+    "thumbnail": "https://example.com/images/history-essay.jpg",
+    "difficulty": "medium"
+  },
+  {
+    "title": "Science Project",
+    "description": "Create a model of the solar system.",
+    "marks": 50,
+    "date": "2024-11-05",
+    "thumbnail": "https://example.com/images/science-project.jpg",
+    "difficulty": "hard"
+  },
+  {
+    "title": "Geography Quiz",
+    "description": "Online quiz covering Chapter 4: Climate Zones.",
+    "marks": 15,
+    "date": "2024-10-31",
+    "thumbnail": "https://example.com/images/geography-quiz.jpg",
+    "difficulty": "easy"
+  },
+  {
+    "title": "Literature Analysis",
+    "description": "Analyze themes in 'To Kill a Mockingbird'.",
+    "marks": 40,
+    "date": "2024-11-04",
+    "thumbnail": "https://example.com/images/literature-analysis.jpg",
+    "difficulty": "medium"
+  },
+  {
+    "title": "Physics Lab Report",
+    "description": "Document your findings from the pendulum experiment.",
+    "marks": 25,
+    "date": "2024-11-06",
+    "thumbnail": "https://example.com/images/physics-lab.jpg",
+    "difficulty": "hard"
+  }
+]

@@ -90,26 +90,11 @@ const LogIn = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="mt-4">
                     <input
-                      className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
-                      type="name"
-                      placeholder="Full Name"
-                      aria-label="name"
-                      name="name"
-                    />
-                    <input
                       className="block mt-4 w-full px-4 py-2 text-gray-700 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
                       type="email"
                       placeholder="Email address"
                       aria-label="Email address"
                       name="email"
-                    />
-
-                    <input
-                      className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
-                      type="photo"
-                      placeholder="Photo Url"
-                      aria-label="photo"
-                      name="photo"
                     />
                     <input
                       className="block w-full px-4 py-2 mt-4 text-gray-700 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
@@ -132,7 +117,7 @@ const LogIn = () => {
                       type="submit"
                       className="px-6 py-2 font-medium text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700"
                     >
-                      Sign Up
+                      Sign In
                     </button>
                   </div>
                 </form>
