@@ -1,50 +1,119 @@
 [
   {
-    "title": "Math Homework",
-    "description": "Solve 10 algebra problems from the textbook.",
-    "marks": 20,
-    "date": "2024-10-30",
-    "thumbnail": "https://example.com/images/math-homework.jpg",
-    "difficulty": "easy"
+    "title": "Geography Quiz",
+    "marks": "100",
+    "date": "2024-10-31",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "resources": "Create a model of the solar system",
+    "description": "Enthusiastically build multifunctional partnerships without resource-leveling 'outside the box' thinking. Progressively transition granular e-tailers and principle-centered imperatives. Progressively iterate plug-and-play imperatives via focused resources. Progressively pursue dynamic leadership skills and user-centric initiatives. Competently morph adaptive.",
+    "user": {
+      "userEmail": "infosharemail405@gmail.com",
+      "userName": "nahid hassan"
+    }
   },
   {
-    "title": "History Essay",
-    "description": "Write a 2-page essay on World War II.",
-    "marks": 30,
-    "date": "2024-11-02",
-    "thumbnail": "https://example.com/images/history-essay.jpg",
-    "difficulty": "medium"
+    "title": "Math Assignment",
+    "marks": "80",
+    "date": "2024-11-01",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "easy",
+    "resources": "Solve 15 algebra equations",
+    "description": "Collaboratively engage in cross-functional collaboration while optimizing workflow through innovative strategies. Methodically assess key performance indicators to enhance productivity.",
+    "user": {
+      "userEmail": "student1@example.com",
+      "userName": "Alice Johnson"
+    }
   },
   {
     "title": "Science Project",
-    "description": "Create a model of the solar system.",
-    "marks": 50,
-    "date": "2024-11-05",
-    "thumbnail": "https://example.com/images/science-project.jpg",
-    "difficulty": "hard"
+    "marks": "90",
+    "date": "2024-11-02",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "resources": "Build a volcano model",
+    "description": "Strategically align initiatives and engage stakeholders to build a cohesive strategy. Optimize user experience through systematic enhancements.",
+    "user": {
+      "userEmail": "student2@example.com",
+      "userName": "Bob Smith"
+    }
   },
   {
-    "title": "Geography Quiz",
-    "description": "Online quiz covering Chapter 4: Climate Zones.",
-    "marks": 15,
-    "date": "2024-10-31",
-    "thumbnail": "https://example.com/images/geography-quiz.jpg",
-    "difficulty": "easy"
+    "title": "History Essay",
+    "marks": "75",
+    "date": "2024-11-03",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "resources": "Research World War I",
+    "description": "Enhance team dynamics by cultivating a growth mindset and embracing innovative solutions. Ensure agility in adapting to market trends.",
+    "user": {
+      "userEmail": "student3@example.com",
+      "userName": "Charlie Brown"
+    }
   },
   {
-    "title": "Literature Analysis",
-    "description": "Analyze themes in 'To Kill a Mockingbird'.",
-    "marks": 40,
+    "title": "Literature Review",
+    "marks": "85",
     "date": "2024-11-04",
-    "thumbnail": "https://example.com/images/literature-analysis.jpg",
-    "difficulty": "medium"
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "resources": "Analyze 'Pride and Prejudice'",
+    "description": "Proactively manage change by creating a culture of innovation and accountability. Leverage insights for strategic advantage.",
+    "user": {
+      "userEmail": "student4@example.com",
+      "userName": "Diana Prince"
+    }
+  },
+  {
+    "title": "Art Project",
+    "marks": "70",
+    "date": "2024-11-05",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "easy",
+    "resources": "Create a painting",
+    "description": "Foster collaboration and communication across all levels of the organization to achieve high performance. Facilitate effective brainstorming sessions.",
+    "user": {
+      "userEmail": "student5@example.com",
+      "userName": "Elena Gilbert"
+    }
+  },
+  {
+    "title": "Computer Science Assignment",
+    "marks": "95",
+    "date": "2024-11-06",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "resources": "Develop a simple application",
+    "description": "Utilize advanced technologies to drive innovation and streamline operations. Enhance service delivery through continuous improvement.",
+    "user": {
+      "userEmail": "student6@example.com",
+      "userName": "Frank Castle"
+    }
   },
   {
     "title": "Physics Lab Report",
-    "description": "Document your findings from the pendulum experiment.",
-    "marks": 25,
-    "date": "2024-11-06",
-    "thumbnail": "https://example.com/images/physics-lab.jpg",
-    "difficulty": "hard"
+    "marks": "80",
+    "date": "2024-11-07",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "resources": "Conduct an experiment",
+    "description": "Implement a data-driven approach to improve operational efficiency and decision-making. Encourage feedback loops for better outcomes.",
+    "user": {
+      "userEmail": "student7@example.com",
+      "userName": "Gina Torres"
+    }
+  },
+  {
+    "title": "Biology Study Guide",
+    "marks": "90",
+    "date": "2024-11-08",
+    "thumbnail": "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "resources": "Compile key concepts",
+    "description": "Create an inclusive environment by promoting diversity and equity. Ensure compliance with regulatory standards.",
+    "user": {
+      "userEmail": "student8@example.com",
+      "userName": "Hank Pym"
+    }
   }
 ]

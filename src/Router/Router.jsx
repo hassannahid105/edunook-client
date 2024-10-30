@@ -7,6 +7,7 @@ import LogIn from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import AllAssignments from "../pages/AllAssignments/AllAssignments";
 import CreateAssignment from "../pages/CreateAssignment/CreateAssignment";
+import ManageAssignment from "../pages/ManageAssignment/ManageAssignment";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "createassignment",
         element: <CreateAssignment></CreateAssignment>,
+      },
+      {
+        path: "manageassignment",
+        element: <ManageAssignment></ManageAssignment>,
       },
       {
         path: "/test",

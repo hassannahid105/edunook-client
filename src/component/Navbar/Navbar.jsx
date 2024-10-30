@@ -162,8 +162,8 @@ const Navbar = () => {
                       </svg>
                       <span className="mx-1">Create Assignment</span>
                     </Link>
-                    <a
-                      href="#"
+                    <Link
+                      to="/manageassignment"
                       className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <svg
@@ -174,8 +174,8 @@ const Navbar = () => {
                       >
                         {/* Settings SVG path here */}
                       </svg>
-                      <span className="mx-1">Settings</span>
-                    </a>
+                      <span className="mx-1">Manage Assignment</span>
+                    </Link>
                     <a
                       href="#"
                       className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"

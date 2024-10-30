@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/images/slider/slide1.jpg";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 
 const CreateAssignment = () => {
   const { user } = useAuth();
-  const handleCreateAssignment = (e) => {
+  const handleCreateAssignment = async (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -23,10 +24,17 @@ const CreateAssignment = () => {
       difficulty,
       resources,
       description,
-      userEmail: user?.email,
-      userName: user?.displayName,
+      user: { userEmail: user?.email, userName: user?.displayName },
     };
-    console.log(assignmentObj);
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5000/assignment",
+        assignmentObj
+      );
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <section className="bg-white dark:bg-gray-900 mt-6">
