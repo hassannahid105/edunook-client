@@ -7,7 +7,7 @@ const AllAssignments = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios("fake.json");
+        const result = await axios("http://localhost:5000/assignments");
         setAssignments(result.data);
       } catch (err) {
         console.log(err);
@@ -20,7 +20,10 @@ const AllAssignments = () => {
       <h2>All Assignments come here</h2>
       <div className="grid grid-cols-4 gap-6 max-w-7xl mx-auto mt-12">
         {assignments.map((assignment) => (
-          <AssignmentCard key={assignment.marks}></AssignmentCard>
+          <AssignmentCard
+            key={assignment._id}
+            assignment={assignment}
+          ></AssignmentCard>
         ))}
       </div>
     </div>

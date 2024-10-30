@@ -20,7 +20,7 @@ const Navbar = () => {
             className="flex items-center justify-between gap-1 font-bold font-lato"
           >
             <img className="w-auto h-6 sm:h-7" src={logo} />
-            <span>EDU NOOK new</span>
+            <span>EDU NOOK</span>
           </Link>
 
           <div className="flex lg:hidden">
@@ -128,7 +128,7 @@ const Navbar = () => {
                 {/* Dropdown menu */}
                 {isOpen && (
                   <div
-                    className="absolute right-0 z-20 w-48 py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
+                    className="absolute right-0 z-20  py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
                     onClick={() => setIsOpen(false)}
                   >
                     {/* new here */}
@@ -148,8 +148,8 @@ const Navbar = () => {
 
                     <hr className="border-gray-200 dark:border-gray-700 " />
                     {/*  */}
-                    <a
-                      href="#"
+                    <Link
+                      to="/createassignment"
                       className="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                     >
                       <svg
@@ -160,8 +160,8 @@ const Navbar = () => {
                       >
                         {/* Profile SVG path here */}
                       </svg>
-                      <span className="mx-1">view profile</span>
-                    </a>
+                      <span className="mx-1">Create Assignment</span>
+                    </Link>
                     <a
                       href="#"
                       className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"

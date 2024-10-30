@@ -1,6 +1,7 @@
 import React from "react";
 
-const AssignmentCard = () => {
+const AssignmentCard = ({ assignment }) => {
+  const { title, description, marks, date, thumbnail, difficulty } = assignment;
   return (
     <div className="card bg-base-100  shadow-xl">
       <figure>
@@ -11,13 +12,13 @@ const AssignmentCard = () => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Shoes!
-          <div className="badge badge-secondary">NEW</div>
+          {title}
+          <div className="badge badge-secondary">{difficulty}</div>
         </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>{description}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+          <div className="badge badge-outline">View Assignment</div>
+          <div className="badge badge-outline">Update</div>
         </div>
       </div>
     </div>
