@@ -2,20 +2,48 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AssignmentTable from "./AssignmentTable";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const ManageAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
-  console.log(user?.email);
+  const getData = async () => {
+    const { data } = await axios(
+      `http://localhost:5000/assignments?email=${user?.email}`
+    );
+    setAssignments(data);
+  };
   useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios(
-        `http://localhost:5000/assignments?email=${"nahideee@gmail.com"}`
-      );
-      setAssignments(data);
-    };
     getData();
-  }, []);
+  }, [user]);
+  // ! delete assignment
+  const handleDelete = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:5000/assignments/${id}`
+      );
+      if (data.deletedCount > 0) {
+        toast.success("Delete items successfully");
+        getData();
+      }
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+  // !  update assignment
+  // const handleUpdate = async (id) => {
+  //   try {
+  //     const { data } = await axios.patch(
+  //       `http://localhost:5000/assignments/${id}`
+  //     );
+  //     if (data.deletedCount > 0) {
+  //       toast.success("Delete items successfully");
+  //       getData();
+  //     }
+  //   } catch (err) {
+  //     toast.error(err.message);
+  //   }
+  // };
   return (
     <section className="container px-4 mx-auto max-w-7xl">
       <div className="flex items-center gap-x-3">
@@ -24,7 +52,7 @@ const ManageAssignment = () => {
         </h2>
 
         <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
-          100 users
+          {assignments.length}Assignments
         </span>
       </div>
 
@@ -135,6 +163,7 @@ const ManageAssignment = () => {
                     <AssignmentTable
                       key={assignment._id}
                       assignment={assignment}
+                      handleDelete={handleDelete}
                     ></AssignmentTable>
                   ))}
                 </tbody>

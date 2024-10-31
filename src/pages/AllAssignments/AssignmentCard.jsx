@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment }) => {
-  const { title, description, marks, date, thumbnail, difficulty } = assignment;
+  const { _id, title, description, marks, date, thumbnail, difficulty } =
+    assignment;
   return (
     <div className="card bg-base-100  shadow-xl">
       <figure>
@@ -14,7 +16,9 @@ const AssignmentCard = ({ assignment }) => {
         </h2>
         <p>{description.substring(0, 50)}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">View Assignment</div>
+          <Link to={`/details/${_id}`}>
+            <div className="badge badge-outline">View Assignment</div>
+          </Link>
           <div className="badge badge-outline">Update</div>
         </div>
       </div>
