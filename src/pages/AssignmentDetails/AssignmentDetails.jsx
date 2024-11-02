@@ -15,7 +15,7 @@ const AssignmentDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 m-10">
       <img
         className="object-cover w-full h-64"
         src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
@@ -25,7 +25,7 @@ const AssignmentDetails = () => {
       <div className="p-6">
         <div>
           <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-            Product
+            {date}
           </span>
           <a
             href="#"
@@ -36,10 +36,7 @@ const AssignmentDetails = () => {
             {title}
           </a>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie
-            parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris
-            egestas quam volutpat viverra. In pretium nec senectus erat. Et
-            malesuada lobortis.
+            {description}
           </p>
         </div>
 
@@ -57,13 +54,16 @@ const AssignmentDetails = () => {
                 tabIndex="0"
                 role="link"
               >
-                Jone Doe
+                {user?.userName}
+                {user?.userEmail}
               </a>
             </div>
-            <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">
-              21 SEP 2015
-            </span>
-            <Link to={`/submit/${_id}`} state={{ title: title }}>
+
+            <Link
+              className="ml-auto"
+              to={`/submit/${_id}`}
+              state={{ title: title }}
+            >
               <button className="btn btn-primary">Take Assignment</button>
             </Link>
           </div>

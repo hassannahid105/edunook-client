@@ -19,7 +19,6 @@ const AssignmentCard = ({ assignment }) => {
           <Link to={`/details/${_id}`}>
             <div className="badge badge-outline">View Assignment</div>
           </Link>
-          <div className="badge badge-outline">Update</div>
         </div>
       </div>
     </div>

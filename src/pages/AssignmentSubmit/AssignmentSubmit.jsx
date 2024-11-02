@@ -2,6 +2,7 @@ import React from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { useLocation, useParams } from "react-router-dom";
+import image from "../../assets/images/slider/slide4.jpg";
 
 const AssignmentSubmit = () => {
   const { user, isLoading } = useAuth();
@@ -35,11 +36,11 @@ const AssignmentSubmit = () => {
     }
   };
   return (
-    <section className="bg-white dark:bg-gray-900 mt-6">
+    <section className="bg-white dark:bg-gray-900 mt-6 m-4">
       <div className="flex justify-center min-h-screen">
         <div
-          className="hidden bg-cover lg:block lg:w-2/5"
-          //   style={{ backgroundImage: `url(${image})` }}
+          className="hidden bg-cover bg-right-top bg bg- lg:block lg:w-2/5"
+          style={{ backgroundImage: `url(${image})` }}
         ></div>
 
         <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
