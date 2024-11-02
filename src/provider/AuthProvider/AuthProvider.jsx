@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
   };
   //   ! sing out use
   const logOut = async () => {
-    setIsLoading(true);
+    setIsLoading(false);
     return signOut(auth)
       .then(() => {
         console.log("singout successful");
@@ -68,6 +68,7 @@ const AuthProvider = ({ children }) => {
     facebookSignIn,
     user,
     isLoading,
+    profileUpdate,
     logOut,
   };
   return (

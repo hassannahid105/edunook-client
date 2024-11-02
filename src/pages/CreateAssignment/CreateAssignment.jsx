@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/images/slider/slide1.jpg";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const CreateAssignment = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const handleCreateAssignment = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +33,10 @@ const CreateAssignment = () => {
         "http://localhost:5000/assignment",
         assignmentObj
       );
-      console.log(data);
+      if (data.acknowledged) {
+        navigate("/manageassignment");
+        toast.success("Create Assignment successfully");
+      }
     } catch (err) {
       console.log(err);
     }

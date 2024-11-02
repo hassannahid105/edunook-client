@@ -16,9 +16,9 @@ const AllAssignments = () => {
     fetchData();
   });
   return (
-    <div>
+    <div className="p-4 mb-4">
       <h2>All Assignments come here</h2>
-      <div className="grid grid-cols-4 gap-6 max-w-7xl mx-auto mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-12">
         {assignments.map((assignment) => (
           <AssignmentCard
             key={assignment._id}

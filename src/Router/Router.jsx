@@ -13,6 +13,7 @@ import UpdateAssingment from "../pages/UpdateAssingment/UpdateAssingment";
 import AssignmentSubmit from "../pages/AssignmentSubmit/AssignmentSubmit";
 import SubmittedAssignments from "../pages/SubmitAssignment/SubmitAssignment";
 import AllSubmitAssignment from "../pages/AllSubmitAssignment/AllSubmitAssignment";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -38,35 +39,63 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <AssignmentDetails></AssignmentDetails>,
+        element: (
+          <PrivateRoutes>
+            <AssignmentDetails></AssignmentDetails>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/assignments/details/${params.id}`),
       },
       {
         path: "/update/:id",
-        element: <UpdateAssingment></UpdateAssingment>,
+        element: (
+          <PrivateRoutes>
+            <UpdateAssingment></UpdateAssingment>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/assignments/details/${params.id}`),
       },
       {
         path: "createassignment",
-        element: <CreateAssignment></CreateAssignment>,
+        element: (
+          <PrivateRoutes>
+            <CreateAssignment></CreateAssignment>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "manageassignment",
-        element: <ManageAssignment></ManageAssignment>,
+        element: (
+          <PrivateRoutes>
+            <ManageAssignment></ManageAssignment>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/submit/:id",
-        element: <AssignmentSubmit></AssignmentSubmit>,
+        element: (
+          <PrivateRoutes>
+            <AssignmentSubmit></AssignmentSubmit>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/submittedassignments",
-        element: <SubmittedAssignments></SubmittedAssignments>,
+        element: (
+          <PrivateRoutes>
+            <SubmittedAssignments></SubmittedAssignments>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/allsubmitted",
-        element: <AllSubmitAssignment></AllSubmitAssignment>,
+        element: (
+          <PrivateRoutes>
+            <AllSubmitAssignment></AllSubmitAssignment>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/test",

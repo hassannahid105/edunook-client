@@ -40,8 +40,8 @@ const LogIn = () => {
   };
   return (
     <header className={`bg-gray-900`}>
-      <div className="container px-20 mx-auto">
-        <nav className="flex flex-col py-6 sm:flex-row sm:justify-between sm:items-center">
+      <div className="container px-4 md:px-20 mx-auto">
+        <nav className="flex flex-col py-4 md:py-6 sm:flex-row sm:justify-between sm:items-center">
           <Link to="/">
             <img className="w-auto h-6 sm:h-7 lg:h-12" src={logo} alt="" />
           </Link>
@@ -62,7 +62,7 @@ const LogIn = () => {
           </div>
         </nav>
 
-        <div className="flex flex-col items-center py-6 lg:h-[36rem] lg:flex-row">
+        <div className="flex flex-col items-center md:py-6 lg:h-[36rem] lg:flex-row">
           <div className="lg:w-1/2">
             <h2 className="text-3xl font-semibold text-gray-100 lg:text-4xl">
               Access
@@ -77,7 +77,7 @@ const LogIn = () => {
             </p>
           </div>
 
-          <div className="flex mt-8 lg:w-1/2 lg:justify-end lg:mt-0">
+          <div className="w-full md:w-auto pb-4 flex mt-8 lg:w-1/2 lg:justify-end lg:mt-0">
             <div className="w-full max-w-xl bg-white rounded-lg dark:bg-gray-800">
               <div className="px-6 py-8 text-center">
                 <h2 className="text-2xl font-semibold text-gray-700 dark:text-white fo">
