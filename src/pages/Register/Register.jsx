@@ -40,8 +40,8 @@ const Register = () => {
   };
   return (
     <header className={`bg-gray-900`}>
-      <div className="container px-20 mx-auto">
-        <nav className="flex flex-col py-6 sm:flex-row sm:justify-between sm:items-center">
+      <div className="container px-4 md:px-20 mx-auto pb-4">
+        <nav className="flex flex-col py-4 md:py-6 sm:flex-row sm:justify-between sm:items-center">
           <Link to="/">
             <img className="w-auto h-6 sm:h-7 lg:h-12" src={logo} alt="" />
           </Link>
@@ -62,13 +62,13 @@ const Register = () => {
           </div>
         </nav>
 
-        <div className="flex flex-col items-center py-6 lg:h-[36rem] lg:flex-row">
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl font-semibold text-gray-100 lg:text-4xl">
+        <div className="md:flex flex-col items-center py-2 md:py-6 lg:h-[36rem] lg:flex-row">
+          <div className="w-full lg:w-1/2">
+            <h2 className="text-xl md:text-3xl font-semibold text-gray-100 lg:text-4xl">
               Become a Part of Our
             </h2>
 
-            <h3 className="mt-2 text-2xl font-semibold text-gray-100">
+            <h3 className="mt-2 text-xl md:text-2xl font-semibold text-gray-100">
               EDU NOOK <span className="text-blue-400"> Community</span>
             </h3>
 

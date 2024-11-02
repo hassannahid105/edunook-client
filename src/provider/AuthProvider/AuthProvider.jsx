@@ -23,7 +23,6 @@ const AuthProvider = ({ children }) => {
   //  !  Google signInWithPopup
   const googleSignIn = () => {
     setIsLoading(true);
-
     return signInWithPopup(auth, provider);
   };
   //  !  Facebook signInWithPopup
@@ -37,6 +36,7 @@ const AuthProvider = ({ children }) => {
     return signOut(auth)
       .then(() => {
         console.log("singout successful");
+        setuser(null);
       })
       .catch((err) => {
         console.log(err);
@@ -54,7 +54,6 @@ const AuthProvider = ({ children }) => {
       if (user) {
         setIsLoading(false);
         return setuser(user);
-        console.log(user);
       } else {
         logOut();
       }

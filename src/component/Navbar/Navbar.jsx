@@ -6,11 +6,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { logOut, user, isLoading } = useAuth();
   const handleLogOut = () => {
+    console.log("logout");
     logOut();
   };
-  if (isLoading) {
-    return <p>loading spinner comming......</p>;
-  }
+
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
@@ -94,13 +93,7 @@ const Navbar = () => {
             >
               Log In
             </Link>
-            <button
-              onClick={handleLogOut}
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
-              href="#"
-            >
-              Log out
-            </button>
+
             <Link
               to="/register"
               className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
@@ -109,121 +102,125 @@ const Navbar = () => {
               Register
             </Link>
           </div>
-          <div className="flex justify-center md:block">
-            <div className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
-              {/* ============================================================================================= */}
-              <div className="relative inline-block">
-                {/* Dropdown toggle button */}
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="relative z-10 block text-gray-700 bg-white rounded-full dark:text-white"
-                >
-                  <img
-                    className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
-                    src={user?.photoURL}
-                    alt="jane avatar"
-                  />
-                </button>
-
-                {/* Dropdown menu */}
-                {isOpen && (
-                  <div
-                    className="absolute right-0 z-20  py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
-                    onClick={() => setIsOpen(false)}
+          {/* drop down  */}
+          {user?.email && (
+            <div className="md:justify-center md:block">
+              <div className="md:relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
+                {/* ============================================================================================= */}
+                <div className="md:relative inline-block">
+                  {/* Dropdown toggle button */}
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:relative z-10 block text-gray-700 bg-white rounded-full dark:text-white"
                   >
-                    {/* new here */}
-                    <a
-                      href="#"
-                      className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      <div className="mx-1">
-                        <h1 className="text-sm font-semibold text-gray-700 dark:text-gray-200">
-                          {user?.displayName}
-                        </h1>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                          {user?.email}
-                        </p>
-                      </div>
-                    </a>
+                    <img
+                      className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
+                      src={user?.photoURL}
+                      alt="jane avatar"
+                    />
+                  </button>
 
-                    <hr className="border-gray-200 dark:border-gray-700 " />
-                    {/*  */}
-                    <Link
-                      to="/createassignment"
-                      className="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                  {/* Dropdown menu */}
+                  {isOpen && (
+                    <div
+                      className="w-full md:w-auto absolute right-0 z-20  py-2 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800"
+                      onClick={() => setIsOpen(false)}
                     >
-                      <svg
-                        className="w-5 h-5 mx-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                      {/* new here */}
+                      <a
+                        href="#"
+                        className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
-                        {/* Profile SVG path here */}
-                      </svg>
-                      <span className="mx-1">Create Assignment</span>
-                    </Link>
-                    <Link
-                      to="/manageassignment"
-                      className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      <svg
-                        className="w-5 h-5 mx-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        <div className="mx-1">
+                          <h1 className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                            {user?.displayName}
+                          </h1>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            {user?.email}
+                          </p>
+                        </div>
+                      </a>
+
+                      <hr className="border-gray-200 dark:border-gray-700 " />
+                      {/*  */}
+                      <Link
+                        to="/createassignment"
+                        className="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
-                        {/* Settings SVG path here */}
-                      </svg>
-                      <span className="mx-1">Manage Assignment</span>
-                    </Link>
-                    <a
-                      href="#"
-                      className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      <svg
-                        className="w-5 h-5 mx-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        <svg
+                          className="w-5 h-5 mx-1"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Profile SVG path here */}
+                        </svg>
+                        <span className="mx-1">Create Assignment</span>
+                      </Link>
+                      <Link
+                        to="/manageassignment"
+                        className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
-                        {/* Shortcuts SVG path here */}
-                      </svg>
-                      <span className="mx-1">Keyboard shortcuts</span>
-                    </a>
-                    <hr className="border-gray-200 dark:border-gray-700" />
-                    <a
-                      href="#"
-                      className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      <svg
-                        className="w-5 h-5 mx-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        <svg
+                          className="w-5 h-5 mx-1"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Settings SVG path here */}
+                        </svg>
+                        <span className="mx-1">Manage Assignment</span>
+                      </Link>
+                      <Link
+                        to={"/submittedassignments"}
+                        className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
-                        {/* Company profile SVG path here */}
-                      </svg>
-                      <span className="mx-1">Company profile</span>
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      <svg
-                        className="w-5 h-5 mx-1"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        <svg
+                          className="w-5 h-5 mx-1"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Shortcuts SVG path here */}
+                        </svg>
+                        <span className="mx-1">Submitted Assingment</span>
+                      </Link>
+                      <hr className="border-gray-200 dark:border-gray-700" />
+                      <Link
+                        to="/allsubmitted"
+                        href="#"
+                        className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
-                        {/* Logout SVG path here */}
-                      </svg>
-                      <span className="mx-1">Logout</span>
-                    </a>
-                  </div>
-                )}
+                        <svg
+                          className="w-5 h-5 mx-1"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Company profile SVG path here */}
+                        </svg>
+                        <span className="mx-1">All Submited Assignment</span>
+                      </Link>
+                      <button
+                        onClick={handleLogOut}
+                        className="flex w-full items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >
+                        <svg
+                          className="w-5 h-5 mx-1"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Logout SVG path here */}
+                        </svg>
+                        <span className="mx-1">Logout</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </nav>

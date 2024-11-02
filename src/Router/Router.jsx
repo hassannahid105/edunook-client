@@ -11,6 +11,8 @@ import ManageAssignment from "../pages/ManageAssignment/ManageAssignment";
 import AssignmentDetails from "../pages/AssignmentDetails/AssignmentDetails";
 import UpdateAssingment from "../pages/UpdateAssingment/UpdateAssingment";
 import AssignmentSubmit from "../pages/AssignmentSubmit/AssignmentSubmit";
+import SubmittedAssignments from "../pages/SubmitAssignment/SubmitAssignment";
+import AllSubmitAssignment from "../pages/AllSubmitAssignment/AllSubmitAssignment";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
       {
         path: "/submit/:id",
         element: <AssignmentSubmit></AssignmentSubmit>,
+      },
+      {
+        path: "/submittedassignments",
+        element: <SubmittedAssignments></SubmittedAssignments>,
+      },
+      {
+        path: "/allsubmitted",
+        element: <AllSubmitAssignment></AllSubmitAssignment>,
       },
       {
         path: "/test",
