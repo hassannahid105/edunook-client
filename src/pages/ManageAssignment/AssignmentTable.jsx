@@ -3,18 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AssignmentTable = ({ assignment, handleDelete }) => {
-  const {
-    _id,
-    title,
-    resources,
-    status,
-    user,
-    description,
-    marks,
-    date,
-    thumbnail,
-    difficulty,
-  } = assignment;
+  const { _id, title, resources, marks, date, thumbnail, difficulty } =
+    assignment;
   return (
     <tr>
       <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">

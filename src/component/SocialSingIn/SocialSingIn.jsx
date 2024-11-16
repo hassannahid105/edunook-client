@@ -14,7 +14,6 @@ const SocialSingIn = () => {
       console.log("result");
     } catch (error) {
       console.log(error);
-      console.log("error");
     }
   };
   // !   facebook log in

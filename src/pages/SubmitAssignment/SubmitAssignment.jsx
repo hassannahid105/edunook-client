@@ -8,7 +8,7 @@ const SubmittedAssignments = () => {
   const { user } = useAuth();
   const getData = async () => {
     const { data } = await axios(
-      `http://localhost:5000/assignments?email=${user?.email}`
+      `http://localhost:5000/allsubmited?email=${user?.email}`
     );
     setAssignments(data);
   };
@@ -20,11 +20,11 @@ const SubmittedAssignments = () => {
     <section className="container px-4 mx-auto max-w-7xl">
       <div className="flex items-center gap-x-3">
         <h2 className="text-lg font-medium text-gray-800 dark:text-white">
-          Team members
+          Submit Assignment Status
         </h2>
 
         <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
-          {assignments.length}Assignments
+          {assignments.length} Assignments
         </span>
       </div>
 

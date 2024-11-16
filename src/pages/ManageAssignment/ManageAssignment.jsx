@@ -31,19 +31,19 @@ const ManageAssignment = () => {
     }
   };
   // !  update assignment
-  // const handleUpdate = async (id) => {
-  //   try {
-  //     const { data } = await axios.patch(
-  //       `http://localhost:5000/assignments/${id}`
-  //     );
-  //     if (data.deletedCount > 0) {
-  //       toast.success("Delete items successfully");
-  //       getData();
-  //     }
-  //   } catch (err) {
-  //     toast.error(err.message);
-  //   }
-  // };
+  const handleUpdate = async (id) => {
+    try {
+      const { data } = await axios.patch(
+        `http://localhost:5000/assignments/${id}`
+      );
+      if (data.deletedCount > 0) {
+        toast.success("Delete items successfully");
+        getData();
+      }
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
   return (
     <section className="container px-4 mx-auto max-w-7xl">
       <div className="flex items-center gap-x-3">

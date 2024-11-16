@@ -17,11 +17,14 @@ const AllSubmitAssignment = () => {
     getData();
   }, []);
   return (
-    <div>
+    <div className="container mx-auto">
       <h2>All submited assignments</h2>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 bg-red-300">
         {submittedassignments?.map((assignment) => (
-          <SubmitedCard key={assignment._id}></SubmitedCard>
+          <SubmitedCard
+            key={assignment._id}
+            assignment={assignment}
+          ></SubmitedCard>
         ))}
       </div>
     </div>
