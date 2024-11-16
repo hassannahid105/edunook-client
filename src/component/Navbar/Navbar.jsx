@@ -114,6 +114,7 @@ const Navbar = () => {
                     className="md:relative z-10 block text-gray-700 bg-white rounded-full dark:text-white"
                   >
                     <img
+                      title={user?.displayName}
                       className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
                       src={user?.photoURL}
                       alt="jane avatar"
@@ -169,7 +170,7 @@ const Navbar = () => {
                         >
                           {/* Settings SVG path here */}
                         </svg>
-                        <span className="mx-1">Manage Assignment</span>
+                        <span className="mx-1">Submitted Assignments</span>
                       </Link>
                       <Link
                         to={"/submittedassignments"}
@@ -183,7 +184,7 @@ const Navbar = () => {
                         >
                           {/* Shortcuts SVG path here */}
                         </svg>
-                        <span className="mx-1">Submitted Assingment</span>
+                        <span className="mx-1">My Assingment</span>
                       </Link>
                       <hr className="border-gray-200 dark:border-gray-700" />
                       <Link

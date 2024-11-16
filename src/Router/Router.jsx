@@ -14,6 +14,7 @@ import AssignmentSubmit from "../pages/AssignmentSubmit/AssignmentSubmit";
 import SubmittedAssignments from "../pages/SubmitAssignment/SubmitAssignment";
 import AllSubmitAssignment from "../pages/AllSubmitAssignment/AllSubmitAssignment";
 import PrivateRoutes from "./PrivateRoutes";
+import MarksModal from "../component/Modal/MarksModal";
 
 const router = createBrowserRouter([
   {
@@ -99,7 +100,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/test",
-        element: <Test></Test>,
+        element: <MarksModal></MarksModal>,
       },
     ],
   },
