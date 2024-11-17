@@ -2,10 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AssignmentCard from "./AssignmentCard";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AllAssignments = () => {
   const [assignments, setAssignments] = useState([]);
-  console.log(assignments);
+  const navigate = useNavigate();
   const getData = async () => {
     try {
       const result = await axios("http://localhost:5000/assignments");
@@ -26,14 +27,19 @@ const AllAssignments = () => {
           `http://localhost:5000/assignments/${id}`
         );
         if (data.deletedCount > 0) {
-          toast.success("Delete items successfully");
+          toast.success("Assignment deleted successfully");
           getData();
         }
       } catch (err) {
         toast.error(err.message);
       }
     } else {
-      toast.error("You are not authorized to access or manage this card");
+      toast.error(
+        "You are not authorized to delete this assignment as it was created by another user.",
+        {
+          duration: 5000,
+        }
+      );
     }
   };
   // update function
@@ -43,8 +49,9 @@ const AllAssignments = () => {
         `http://localhost:5000/assignments/${id}`
       );
       if (data.deletedCount > 0) {
-        toast.success("Delete items successfully");
+        toast.success("Assignment updated successfully.");
         getData();
+        navigate("/allassignments");
       }
     } catch (err) {
       toast.error(err.message);

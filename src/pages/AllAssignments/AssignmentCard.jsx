@@ -8,7 +8,6 @@ const AssignmentCard = ({ assignment, handleDelete, handleUpdate }) => {
     title,
     description,
     marks,
-    date,
     thumbnail,
     difficulty,
     user: cardUser,
@@ -34,7 +33,7 @@ const AssignmentCard = ({ assignment, handleDelete, handleUpdate }) => {
             onClick={() => handleDelete(user?.email, cardUser, _id)}
             className="badge badge-neutral"
           >
-            delete
+            Delete
           </button>
           <Link to={`/update/${_id}`} className="badge badge-neutral">
             Update

@@ -26,12 +26,19 @@ const AssignmentSubmit = () => {
       assignmentId: id,
       status: "pending",
       examinerEmail: user.email,
+      examinerName: user?.displayName,
     };
     try {
       const { data } = await axios.post(
         "http://localhost:5000/submittedassignments",
         submitObj
       );
+      if (data.status === "unauthorized") {
+        return toast.error(
+          "You have already submitted this assignment. Duplicate submissions are not allowed.",
+          { duration: 6000 }
+        );
+      }
       navigate("/allsubmitted");
       toast.success("Assignment added successful");
       console.log(data);

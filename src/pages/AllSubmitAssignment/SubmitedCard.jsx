@@ -21,6 +21,10 @@ const SubmitedCard = ({ assignment }) => {
         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 bg-green-300 py-1 px-3 max-w-max rounded-full">
           {status}
         </p>
+        <p className="btn btn-primary">Open pdf</p>
+        {/*pdf added  */}
+
+        {/* <p className="btn btn-primary">{displayName}</p> */}
       </div>
 
       <div className="flex items-center justify-between px-4 py-2 bg-gray-900">

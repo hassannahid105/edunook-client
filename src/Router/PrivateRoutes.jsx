@@ -1,11 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const PrivateRoutes = ({ children }) => {
   const { user, isLoading } = useAuth();
-  const navigate = useNavigate();
+
   if (isLoading) {
-    console.log("loading.......");
     return (
       <p>
         <span className="loading loading-ring loading-lg"></span>
@@ -13,8 +12,8 @@ const PrivateRoutes = ({ children }) => {
     );
   }
   if (!user) {
-    console.log("login");
-    return navigate("/login");
+    console.log(user);
+    return <Navigate to="/login"></Navigate>;
   }
   return <div>{children}</div>;
 };

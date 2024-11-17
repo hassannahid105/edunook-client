@@ -35,7 +35,9 @@ const CreateAssignment = () => {
       );
       if (data.acknowledged) {
         navigate("/manageassignment");
-        toast.success("Create Assignment successfully");
+        toast.success("Create Assignment successfully", {
+          duration: 6000,
+        });
       }
     } catch (err) {
       console.log(err);

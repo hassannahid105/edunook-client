@@ -87,6 +87,14 @@ const Navbar = () => {
               Assignments
             </Link>
             <Link
+              to="/allsubmitted"
+              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              href="#"
+            >
+              Submited Assignment
+            </Link>
+
+            <Link
               to="/login"
               className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
@@ -143,7 +151,6 @@ const Navbar = () => {
                       </a>
 
                       <hr className="border-gray-200 dark:border-gray-700 " />
-                      {/*  */}
                       <Link
                         to="/createassignment"
                         className="flex items-center px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
@@ -170,7 +177,7 @@ const Navbar = () => {
                         >
                           {/* Settings SVG path here */}
                         </svg>
-                        <span className="mx-1">Submitted Assignments</span>
+                        <span className="mx-1"> Assignments Submitted</span>
                       </Link>
                       <Link
                         to={"/submittedassignments"}
@@ -184,24 +191,9 @@ const Navbar = () => {
                         >
                           {/* Shortcuts SVG path here */}
                         </svg>
-                        <span className="mx-1">My Assingment</span>
+                        <span className="mx-1">Take Assingment</span>
                       </Link>
                       <hr className="border-gray-200 dark:border-gray-700" />
-                      <Link
-                        to="/allsubmitted"
-                        href="#"
-                        className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                      >
-                        <svg
-                          className="w-5 h-5 mx-1"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          {/* Company profile SVG path here */}
-                        </svg>
-                        <span className="mx-1">All Submited Assignment</span>
-                      </Link>
                       <button
                         onClick={handleLogOut}
                         className="flex w-full items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"

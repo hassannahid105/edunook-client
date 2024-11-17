@@ -61,6 +61,10 @@ export default function MarksModal({ isOpen, setIsOpen, id }) {
               <DialogTitle as="h3" className="text-3xl font-medium text-white ">
                 Given Marks
               </DialogTitle>
+              <div>
+                <div>pdf link</div>
+                <div>note by examinee</div>
+              </div>
               <form onSubmit={handleSubmitMarks}>
                 <div className="w-full max-w-md px-4 mt-4">
                   <Field>

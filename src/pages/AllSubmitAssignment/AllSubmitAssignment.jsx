@@ -8,8 +8,8 @@ const AllSubmitAssignment = () => {
     const getData = async () => {
       try {
         const { data } = await axios("http://localhost:5000/allsubmited");
-        console.log(data);
-        setSubmitedAssignment(data);
+        const pendingAssignment = data.filter((i) => i.status === "pending");
+        setSubmitedAssignment(pendingAssignment);
       } catch (err) {
         console.log(err);
       }
