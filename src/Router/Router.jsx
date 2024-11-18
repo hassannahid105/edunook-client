@@ -6,14 +6,14 @@ import LogIn from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import AllAssignments from "../pages/AllAssignments/AllAssignments";
 import CreateAssignment from "../pages/CreateAssignment/CreateAssignment";
-import ManageAssignment from "../pages/ManageAssignment/ManageAssignment";
 import AssignmentDetails from "../pages/AssignmentDetails/AssignmentDetails";
 import UpdateAssingment from "../pages/UpdateAssingment/UpdateAssingment";
 import AssignmentSubmit from "../pages/AssignmentSubmit/AssignmentSubmit";
-import SubmittedAssignments from "../pages/SubmitAssignment/SubmitAssignment";
 import AllSubmitAssignment from "../pages/AllSubmitAssignment/AllSubmitAssignment";
 import PrivateRoutes from "./PrivateRoutes";
 import Test from "../component/_test_/Test";
+import MyAssignment from "../pages/MyAssignment/MyAssignment";
+import SubmitAssignment from "../pages/SubmitAssignments/SubmitAssignment";
 
 const router = createBrowserRouter([
   {
@@ -66,10 +66,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "manageassignment",
+        path: "submitassignments",
         element: (
           <PrivateRoutes>
-            <ManageAssignment></ManageAssignment>
+            <SubmitAssignment></SubmitAssignment>
           </PrivateRoutes>
         ),
       },
@@ -82,10 +82,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/submittedassignments",
+        path: "/myassignment",
         element: (
           <PrivateRoutes>
-            <SubmittedAssignments></SubmittedAssignments>
+            <MyAssignment></MyAssignment>
           </PrivateRoutes>
         ),
       },

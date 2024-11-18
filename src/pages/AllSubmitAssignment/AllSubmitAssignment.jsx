@@ -2,20 +2,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SubmitedCard from "./SubmitedCard";
 import Pdf from "../../component/Pdf/Pdf";
+import toast from "react-hot-toast";
 
 const AllSubmitAssignment = () => {
   const [submittedassignments, setSubmitedAssignment] = useState([]);
   const [ispdf, setPdf] = useState(false);
+  const getData = async () => {
+    try {
+      const { data } = await axios("http://localhost:5000/allsubmited");
+      const pendingAssignment = data.filter((i) => i.status === "pending");
+      setSubmitedAssignment(pendingAssignment);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios("http://localhost:5000/allsubmited");
-        const pendingAssignment = data.filter((i) => i.status === "pending");
-        setSubmitedAssignment(pendingAssignment);
-      } catch (err) {
-        console.log(err);
-      }
-    };
     getData();
   }, []);
   // handle pdf
@@ -33,6 +34,7 @@ const AllSubmitAssignment = () => {
             assignment={assignment}
             handlePdf={handlePdf}
             ispdf={ispdf}
+            getData={getData}
           ></SubmitedCard>
         ))}
       </div>

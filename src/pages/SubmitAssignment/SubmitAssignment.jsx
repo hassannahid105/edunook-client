@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import SubmittedTable from "./SubmittedTable";
+import MyAssignmentTable from "./MyAssignmentTable";
 
-const SubmittedAssignments = () => {
+const SubmitAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
   const getData = async () => {
@@ -132,10 +132,10 @@ const SubmittedAssignments = () => {
                 <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                   {/* table data here */}
                   {assignments?.map((assignment) => (
-                    <SubmittedTable
+                    <MyAssignmentTable
                       key={assignment._id}
                       assignment={assignment}
-                    ></SubmittedTable>
+                    ></MyAssignmentTable>
                   ))}
                 </tbody>
               </table>
@@ -147,4 +147,4 @@ const SubmittedAssignments = () => {
   );
 };
 
-export default SubmittedAssignments;
+export default SubmitAssignment;

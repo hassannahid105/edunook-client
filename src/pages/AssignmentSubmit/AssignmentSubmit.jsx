@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 
 const AssignmentSubmit = () => {
   const { user, isLoading } = useAuth();
+  const [examiner, setExaminer] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
@@ -14,8 +15,25 @@ const AssignmentSubmit = () => {
   if (isLoading) {
     return <p>Loading.....</p>;
   }
+  console.log(id);
+  // !
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get(
+        `http://localhost:5000/assignments/details/${id}`
+      );
+      setExaminer(data.user.userEmail);
+    };
+    getData();
+  }, []);
+  console.log(examiner);
+  // !
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (examiner === user.email) {
+      return toast.error(" You cannot submit an assignment that you created.");
+    }
     const form = e.target;
     const pdf = form.pdf.value;
     const note = form.note.value;
@@ -24,9 +42,12 @@ const AssignmentSubmit = () => {
       note,
       title: title,
       assignmentId: id,
+      examiner: examiner,
       status: "pending",
-      examinerEmail: user.email,
-      examinerName: user?.displayName,
+      examinee: {
+        examineeEmail: user.email,
+        examineeName: user?.displayName,
+      },
     };
     try {
       const { data } = await axios.post(
@@ -57,7 +78,7 @@ const AssignmentSubmit = () => {
         <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
           <div className="w-full">
             <h1 className="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
-              Get your free account now.
+              assignment submission form
             </h1>
 
             <p className="mt-4 text-gray-500 dark:text-gray-400">

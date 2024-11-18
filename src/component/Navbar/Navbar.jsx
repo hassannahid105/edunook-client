@@ -166,7 +166,7 @@ const Navbar = () => {
                         <span className="mx-1">Create Assignment</span>
                       </Link>
                       <Link
-                        to="/manageassignment"
+                        to="/submitassignments"
                         className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <svg
@@ -177,10 +177,10 @@ const Navbar = () => {
                         >
                           {/* Settings SVG path here */}
                         </svg>
-                        <span className="mx-1"> Assignments Submitted</span>
+                        <span className="mx-1">Submitted Assignments</span>
                       </Link>
                       <Link
-                        to={"/submittedassignments"}
+                        to={"/myassignment"}
                         className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <svg
@@ -191,7 +191,7 @@ const Navbar = () => {
                         >
                           {/* Shortcuts SVG path here */}
                         </svg>
-                        <span className="mx-1">Take Assingment</span>
+                        <span className="mx-1">My Assingment</span>
                       </Link>
                       <hr className="border-gray-200 dark:border-gray-700" />
                       <button

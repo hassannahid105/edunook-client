@@ -7,8 +7,9 @@ import {
   Textarea,
 } from "@headlessui/react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
-export default function MarksModal({ isOpen, setIsOpen, id }) {
+export default function MarksModal({ isOpen, setIsOpen, id, getData }) {
   function open() {
     setIsOpen(true);
   }
@@ -16,11 +17,9 @@ export default function MarksModal({ isOpen, setIsOpen, id }) {
   function close() {
     setIsOpen(false);
   }
-  console.log(id);
   //   submit marks
   const handleSubmitMarks = async (e) => {
     e.preventDefault();
-    console.log(id);
     const form = e.target;
     const marks = form.marks.value;
     const note = form.note.value;
@@ -36,13 +35,16 @@ export default function MarksModal({ isOpen, setIsOpen, id }) {
           `http://localhost:5000/assignments/marks/${id}`,
           givingMarks
         );
-        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast.success("message comming");
+          getData();
+        }
       } catch (err) {
-        //   toast.error(err.message);
+        toast.error(err.message);
       }
     }
   };
-
+  // {acknowledged: true, modifiedCount: 1, upsertedId: null, upsertedCount: 0, matchedCount: 1}
   return (
     <>
       <Dialog

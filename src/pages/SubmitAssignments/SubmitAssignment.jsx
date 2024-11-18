@@ -4,12 +4,13 @@ import AssignmentTable from "./AssignmentTable";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
-const ManageAssignment = () => {
+const SubmitAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
+  console.log(user);
   const getData = async () => {
     const { data } = await axios(
-      `http://localhost:5000/assignments?email=${user?.email}`
+      `http://localhost:5000/allsubmited?email=${user?.email}`
     );
     setAssignments(data);
   };
@@ -17,33 +18,33 @@ const ManageAssignment = () => {
     getData();
   }, [user]);
   // ! delete assignment
-  const handleDelete = async (id) => {
-    try {
-      const { data } = await axios.delete(
-        `http://localhost:5000/assignments/${id}`
-      );
-      if (data.deletedCount > 0) {
-        toast.success("Delete items successfully");
-        getData();
-      }
-    } catch (err) {
-      toast.error(err.message);
-    }
-  };
-  // !  update assignment
-  const handleUpdate = async (id) => {
-    try {
-      const { data } = await axios.patch(
-        `http://localhost:5000/assignments/${id}`
-      );
-      if (data.deletedCount > 0) {
-        toast.success("Delete items successfully");
-        getData();
-      }
-    } catch (err) {
-      toast.error(err.message);
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     const { data } = await axios.delete(
+  //       `http://localhost:5000/assignments/${id}`
+  //     );
+  //     if (data.deletedCount > 0) {
+  //       toast.success("Delete items successfully");
+  //       getData();
+  //     }
+  //   } catch (err) {
+  //     toast.error(err.message);
+  //   }
+  // };
+  // // !  update assignment
+  // const handleUpdate = async (id) => {
+  //   try {
+  //     const { data } = await axios.patch(
+  //       `http://localhost:5000/assignments/${id}`
+  //     );
+  //     if (data.deletedCount > 0) {
+  //       toast.success("Delete items successfully");
+  //       getData();
+  //     }
+  //   } catch (err) {
+  //     toast.error(err.message);
+  //   }
+  // };
   return (
     <section className="container px-4 mx-auto max-w-7xl">
       <div className="flex items-center gap-x-3">
@@ -128,7 +129,7 @@ const ManageAssignment = () => {
                     <AssignmentTable
                       key={assignment._id}
                       assignment={assignment}
-                      handleDelete={handleDelete}
+                      // handleDelete={handleDelete}
                     ></AssignmentTable>
                   ))}
                 </tbody>
@@ -141,4 +142,4 @@ const ManageAssignment = () => {
   );
 };
 
-export default ManageAssignment;
+export default SubmitAssignment;

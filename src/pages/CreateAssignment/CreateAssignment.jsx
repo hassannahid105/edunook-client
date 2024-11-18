@@ -38,7 +38,7 @@ const CreateAssignment = () => {
         assignmentObj
       );
       if (data.acknowledged) {
-        navigate("/manageassignment");
+        navigate("/allassignments");
         toast.success("Create Assignment successfully", {
           duration: 6000,
         });

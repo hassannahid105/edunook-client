@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AssignmentTable = ({ assignment, handleDelete }) => {
+const AssignmentTable = ({ assignment }) => {
   const { _id, title, resources, marks, date, thumbnail, difficulty } =
     assignment;
   return (
@@ -47,7 +47,7 @@ const AssignmentTable = ({ assignment, handleDelete }) => {
       <td className="px-4 py-4 text-sm whitespace-nowrap">
         <div className="flex items-center gap-x-6">
           <button
-            onClick={() => handleDelete(_id)}
+            // onClick={() => handleDelete(_id)}
             className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none"
           >
             <svg

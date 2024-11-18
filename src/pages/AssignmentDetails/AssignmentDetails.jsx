@@ -27,7 +27,7 @@ const AssignmentDetails = () => {
           <div className="p-6">
             <div>
               <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                {date}
+                the assignment was created: {date}
               </span>
               <a
                 href="#"
