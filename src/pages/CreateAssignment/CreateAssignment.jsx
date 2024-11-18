@@ -1,11 +1,14 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import image from "../../assets/images/slider/slide1.jpg";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Test from "../../component/_test_/Test";
 
 const CreateAssignment = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  console.log(startDate);
   const { user } = useAuth();
   const navigate = useNavigate();
   const handleCreateAssignment = async (e) => {
@@ -13,7 +16,7 @@ const CreateAssignment = () => {
     const form = e.target;
     const title = form.title.value;
     const marks = form.marks.value;
-    const date = form.date.value;
+    const date = startDate;
     const thumbnail = form.thumbnail.value;
     const difficulty = form.difficulty.value;
     const resources = form.resources.value;
@@ -28,6 +31,7 @@ const CreateAssignment = () => {
       description,
       user: { userEmail: user?.email, userName: user?.displayName },
     };
+    console.log(assignmentObj);
     try {
       const { data } = await axios.post(
         "http://localhost:5000/assignment",
@@ -138,18 +142,6 @@ const CreateAssignment = () => {
 
               <div>
                 <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                  Date
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  placeholder="DD-MM-YYYY"
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
                   Thumbnail
                 </label>
                 <input
@@ -189,6 +181,19 @@ const CreateAssignment = () => {
                   className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
+              <div>
+                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  Resources
+                </label>
+                <input
+                  type="text"
+                  name="resources"
+                  placeholder="Resources or materials are needed"
+                  className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                />
+              </div>
+              <Test setStartDate={setStartDate} startDate={startDate}></Test>
+
               <div className="col-span-2">
                 <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
                   Description

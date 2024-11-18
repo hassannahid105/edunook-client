@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import "./customDatePickerWidth.css";
+import "./calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
-const Test = ({ setStartDate, startDate }) => {
+const Calendar = ({ setStartDate, startDate }) => {
   return (
-    <div style={{ width: "324px", float: "none" }}>
-      {" "}
-      {/* Adjust the width here */}
+    <div>
       <DatePicker
         placeholder="Math Homework"
         className="react-datepicker__month-container"
@@ -19,4 +16,4 @@ const Test = ({ setStartDate, startDate }) => {
   );
 };
 
-export default Test;
+export default Calendar;

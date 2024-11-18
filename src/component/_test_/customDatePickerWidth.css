@@ -1,0 +1,7 @@
+.react-datepicker {
+  width: 324px; /* Adjust the calendar container width */
+}
+
+.react-datepicker__month-container {
+  width: 100%; /* Ensure the calendar fills the container */
+}

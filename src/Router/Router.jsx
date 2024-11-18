@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
-import Test from "../component/_test_/Test";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
 import LogIn from "../pages/Login/Login";
@@ -14,7 +13,7 @@ import AssignmentSubmit from "../pages/AssignmentSubmit/AssignmentSubmit";
 import SubmittedAssignments from "../pages/SubmitAssignment/SubmitAssignment";
 import AllSubmitAssignment from "../pages/AllSubmitAssignment/AllSubmitAssignment";
 import PrivateRoutes from "./PrivateRoutes";
-import MarksModal from "../component/Modal/MarksModal";
+import Test from "../component/_test_/Test";
 
 const router = createBrowserRouter([
   {
@@ -100,7 +99,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/test",
-        element: <MarksModal></MarksModal>,
+        element: <Test></Test>,
       },
     ],
   },

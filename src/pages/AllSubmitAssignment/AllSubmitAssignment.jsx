@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SubmitedCard from "./SubmitedCard";
+import Pdf from "../../component/Pdf/Pdf";
 
 const AllSubmitAssignment = () => {
   const [submittedassignments, setSubmitedAssignment] = useState([]);
+  const [ispdf, setPdf] = useState(false);
   useEffect(() => {
     const getData = async () => {
       try {
@@ -16,6 +18,11 @@ const AllSubmitAssignment = () => {
     };
     getData();
   }, []);
+  // handle pdf
+  const handlePdf = () => {
+    setPdf(!ispdf);
+    console.log(ispdf);
+  };
   return (
     <div className="container mx-auto">
       <h2>All submited assignments</h2>
@@ -24,9 +31,12 @@ const AllSubmitAssignment = () => {
           <SubmitedCard
             key={assignment._id}
             assignment={assignment}
+            handlePdf={handlePdf}
+            ispdf={ispdf}
           ></SubmitedCard>
         ))}
       </div>
+      {ispdf && <Pdf></Pdf>}
     </div>
   );
 };
