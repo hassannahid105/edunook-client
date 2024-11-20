@@ -11,15 +11,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative bg-white shadow dark:bg-gray-800">
-      <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
-        <div className="flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center justify-between gap-1 font-bold font-lato"
-          >
-            <img className="w-auto h-6 sm:h-7" src={logo} />
-            <span>EDU NOOK</span>
+    <nav className=" fixed w-full z-20 bg-main shadow-md shadow-second text-white dark:bg-gray-800">
+      <div className="e-container h-24 mx-auto md:flex md:justify-between md:items-center">
+        <div className="flex items-center justify-between text-2xl">
+          <Link to="/" className="flex items-end font-bold ">
+            <img className="w-auto h-6 sm:h-10" src={logo} />
+            <span className="">DU NOOK</span>
           </Link>
 
           <div className="flex lg:hidden">
@@ -69,26 +66,26 @@ const Navbar = () => {
             isOpen
               ? "translate-x-0 opacity-100 "
               : "opacity-0 -translate-x-full"
-          } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center`}
+          } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center text-lg `}
         >
           <div className="flex flex-col md:flex-row md:mx-6">
             <Link
               to="/"
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
             >
               Home
             </Link>
             <Link
               to="/allassignments"
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
             >
               Assignments
             </Link>
             <Link
               to="/allsubmitted"
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
             >
               Submited Assignment
@@ -96,7 +93,7 @@ const Navbar = () => {
 
             <Link
               to="/login"
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
             >
               Log In
@@ -104,7 +101,7 @@ const Navbar = () => {
 
             <Link
               to="/register"
-              className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+              className="my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
             >
               Register
@@ -113,19 +110,19 @@ const Navbar = () => {
           {/* drop down  */}
           {user?.email && (
             <div className="md:justify-center md:block">
-              <div className="md:relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
+              <div className="md:relative transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300">
                 {/* ============================================================================================= */}
                 <div className="md:relative inline-block">
                   {/* Dropdown toggle button */}
                   <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="md:relative z-10 block text-gray-700 bg-white rounded-full dark:text-white"
+                    className="md:relative z-10 block border-4 bg-main border-second rounded-full dark:text-white"
                   >
                     <img
                       title={user?.displayName}
                       className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
                       src={user?.photoURL}
-                      alt="jane avatar"
+                      alt="Profile Picture"
                     />
                   </button>
 
@@ -141,7 +138,7 @@ const Navbar = () => {
                         className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                       >
                         <div className="mx-1">
-                          <h1 className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                          <h1 className="text-sm font-semibold dark:text-gray-200">
                             {user?.displayName}
                           </h1>
                           <p className="text-sm text-gray-500 dark:text-gray-400">

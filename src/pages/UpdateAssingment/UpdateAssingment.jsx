@@ -2,7 +2,10 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import image from "../../assets/images/slider/slide3.jpg";
 import axios from "axios";
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
+
 const UpdateAssingment = () => {
+  const { user: loginUser } = useAuth();
   const navigate = useNavigate();
   const {
     _id,
@@ -28,6 +31,11 @@ const UpdateAssingment = () => {
     const difficulty = form.difficulty.value;
     const resources = form.resources.value;
     const description = form.description.value;
+    if (email !== loginUser.email) {
+      return toast.error(
+        "You are not authorized to update this assignment. Only the creator  can make changes."
+      );
+    }
     //  ? update object........
     const updateObj = {
       title,
@@ -46,7 +54,7 @@ const UpdateAssingment = () => {
       );
       if (data.modifiedCount > 0) {
         toast.success("update document successfull");
-        navigate("/manageassignment");
+        navigate("/allassignments");
       }
     } catch (err) {
       console.log(err);

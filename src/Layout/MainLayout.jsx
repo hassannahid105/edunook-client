@@ -4,9 +4,13 @@ import Footer from "../component/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="container mx-auto">
-      <Navbar></Navbar>
-      <Outlet></Outlet>
+    <div className="h-full font-lato">
+      <div className="h-24">
+        <Navbar></Navbar>
+      </div>
+      <div className="h-[calc-(100%-64px)]">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
       <div className="mb-[600px] text-center mt-[100px]">remove last</div>
     </div>

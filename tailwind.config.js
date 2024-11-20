@@ -4,6 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: { lato: ["Lato", "serif"] },
+      colors: {
+        main: "#122729",
+        second: "#61cE70",
+        third: "#20c999",
+      },
     },
   },
   plugins: [require("daisyui")],
