@@ -1,4 +1,6 @@
 import React from "react";
+import { FaChevronRight } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AssignmentDetails = () => {
@@ -13,62 +15,50 @@ const AssignmentDetails = () => {
     thumbnail,
     difficulty,
   } = useLoaderData();
+  //   the assignment was created: {date}
+  //   {description}
+  //   {title}
+
+  //   {user?.userName}
+  //   {user?.userEmail}
 
   return (
     <>
       {user && (
-        <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 m-10">
-          <img
-            className="object-cover w-full h-64"
-            src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            alt="Article"
-          />
-
-          <div className="p-6">
-            <div>
-              <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                the assignment was created: {date}
-              </span>
-              <a
-                href="#"
-                className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
-                tabIndex="0"
-                role="link"
-              >
-                {title}
-              </a>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {description}
-              </p>
-            </div>
-
-            <div className="mt-4">
-              <div className="flex items-center">
-                <div className="flex items-center">
-                  <img
-                    className="object-cover h-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60"
-                    alt="Avatar"
-                  />
-                  <a
-                    href="#"
-                    className="mx-2 font-semibold text-gray-700 dark:text-gray-200"
-                    tabIndex="0"
-                    role="link"
-                  >
-                    {user?.userName}
-                    {user?.userEmail}
-                  </a>
-                </div>
-
-                <Link
-                  className="ml-auto"
-                  to={`/submit/${_id}`}
-                  state={{ title: title }}
-                >
-                  <button className="btn btn-primary">Take Assignment</button>
-                </Link>
+        <div className="grid grid-cols-2 gap-20 e-container py-20">
+          <figure className="w-full h-">
+            <img src={thumbnail} alt="" className="w-full " />
+          </figure>
+          <div className="">
+            <h2 className="text-4xl capitalize font-bold pb-4 ">{title}</h2>
+            <p className="text-xl text-gray-400 py-6">
+              Created: <span className="text-second ">{date}</span>
+            </p>
+            <p className="leading-8 text-lg text-gray-500 pb-10">
+              {description}
+            </p>
+            <button className="text-second text-lg font-bold pb-10">
+              Read more
+            </button>
+            <p className="text-4xl font-bold text-second">Marks: {marks}</p>
+            <div className=" my-10 flex justify-between items-center">
+              <Link to={`/submit/${_id}`} state={{ title: title }}>
+                <button className="capitalize rounded-md h-[68px] hover:bg-main hover:text-second hover:transition-all hover:duration-300   mt-6 flex items-center gap-2 py-6 px-14  justify-center bg-second text-white font-bold text-sm md:text-xl tracking-wide">
+                  Add To Cart
+                  <span className="text-4xl">
+                    <MdOutlineShoppingCart />
+                  </span>
+                </button>
+              </Link>
+              <div className="capitalize flex gap-2 self-end items-end justify-center">
+                mastery challenges:
+                <span className="uppercase   text-lg font-normal  bg-second  text-white px-4 py-1">
+                  {difficulty}
+                </span>
               </div>
+            </div>
+            <div>
+              <p>email</p>
             </div>
           </div>
         </div>
