@@ -3,7 +3,7 @@ import Slide from "../../component/Slider/Slider";
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Slide></Slide>
     </div>
   );

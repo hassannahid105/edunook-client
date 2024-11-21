@@ -1,4 +1,8 @@
 .e-container {
   max-width: 1280px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+.line_height {
+  line-height: 60px;
 }
