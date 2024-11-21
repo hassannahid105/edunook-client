@@ -20,6 +20,7 @@ const CreateAssignment = () => {
     const thumbnail = form.thumbnail.value;
     const difficulty = form.difficulty.value;
     const resources = form.resources.value;
+    const time = form.time.value;
     const description = form.description.value;
     const assignmentObj = {
       title,
@@ -28,10 +29,11 @@ const CreateAssignment = () => {
       thumbnail,
       difficulty,
       resources,
+      time,
       description,
       user: { userEmail: user?.email, userName: user?.displayName },
     };
-    console.log(assignmentObj);
+    console.table(assignmentObj);
     try {
       const { data } = await axios.post(
         "http://localhost:5000/assignment",
@@ -183,12 +185,12 @@ const CreateAssignment = () => {
               </div>
               <div>
                 <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                  Resources
+                  Time Limit
                 </label>
                 <input
                   type="text"
-                  name="resources"
-                  placeholder="Resources or materials are needed"
+                  name="time"
+                  placeholder="An optional field for timed assignments"
                   className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
