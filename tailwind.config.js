@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: { lato: ["Lato", "serif"] },
       colors: {
-        main: "#122729",
+        main: "#4c5f4e",
         second: "#61cE70",
         third: "#20c999",
       },

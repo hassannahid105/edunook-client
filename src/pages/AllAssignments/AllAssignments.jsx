@@ -71,7 +71,7 @@ const AllAssignments = () => {
   return (
     <div className="p-4 mb-4">
       <h2>All Assignments come here now</h2>
-      <div className="w-full text-center flex gap-2 items-center justify-center">
+      <div className="w-full text-center flex gap-8 items-center justify-center">
         <select
           onChange={(e) => handleSortByDifficulty(e.target.value)}
           className="select select-primary w-full max-w-xs"
@@ -87,7 +87,7 @@ const AllAssignments = () => {
         </button>
       </div>
       <div></div>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 max-w-7xl mx-auto mt-12">
         {assignments.map((assignment) => (
           <AssignmentCard
             key={assignment._id}
