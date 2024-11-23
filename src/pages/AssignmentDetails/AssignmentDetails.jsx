@@ -42,7 +42,7 @@ const AssignmentDetails = () => {
             <div className=" my-6 flex justify-between items-center">
               <Link to={`/submit/${_id}`} state={{ title: title }}>
                 <button className="capitalize rounded-md h-[68px] hover:bg-main hover:text-second hover:transition-all hover:duration-300   mt-6 flex items-center gap-2 py-6 px-14  justify-center bg-second text-white font-bold text-sm md:text-xl tracking-wide">
-                  Add To Cart
+                  Add Assignment
                   <span className="text-4xl">
                     <MdOutlineShoppingCart />
                   </span>

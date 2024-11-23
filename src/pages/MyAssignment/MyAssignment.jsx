@@ -8,7 +8,7 @@ const MyAssignment = () => {
   const { user } = useAuth();
   const getData = async () => {
     const { data } = await axios(
-      `http://localhost:5000/assignments?email=${user?.email}`
+      `http://localhost:5000/submittedassignments?email=${user?.email}`
     );
     setAssignments(data);
   };

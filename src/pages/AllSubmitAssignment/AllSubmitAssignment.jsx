@@ -16,27 +16,36 @@ const AllSubmitAssignment = () => {
       toast.err(err.message);
     }
   };
+  console.log(submittedassignments);
   useEffect(() => {
     getData();
   }, []);
+  console.log(submittedassignments);
   // handle pdf
   const handlePdf = () => {
     setPdf(!ispdf);
     console.log(ispdf);
   };
   return (
-    <div className="container mx-auto">
-      <h2>All submited assignments</h2>
-      <div className="grid grid-cols-4 gap-4 bg-red-300">
-        {submittedassignments?.map((assignment) => (
-          <SubmitedCard
-            key={assignment._id}
-            assignment={assignment}
-            handlePdf={handlePdf}
-            ispdf={ispdf}
-            getData={getData}
-          ></SubmitedCard>
-        ))}
+    <div className="container mx-auto py-20 bg-gray-100">
+      <div className="e-container">
+        <div className="text-center  mb-12">
+          <h2 className="text-4xl font-bold text-gray-600 mb-4">
+            All Assignments
+          </h2>
+          <p className="mb-4">Browse all available assignments in one place.</p>
+        </div>
+        <div className="grid grid-cols-4 gap-8 ">
+          {submittedassignments?.map((assignment) => (
+            <SubmitedCard
+              key={assignment._id}
+              assignment={assignment}
+              handlePdf={handlePdf}
+              ispdf={ispdf}
+              getData={getData}
+            ></SubmitedCard>
+          ))}
+        </div>
       </div>
       {ispdf && <Pdf></Pdf>}
     </div>

@@ -84,7 +84,11 @@ const AllAssignments = () => {
             onChange={(e) => handleSortByDifficulty(e.target.value)}
             className="select select-success w-full max-w-xs rounded-r-none selection:select::outline-none"
           >
-            <option selected value="easy">
+            <option
+              className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+              selected
+              value="easy"
+            >
               Easy
             </option>
             <option value="medium">Medium</option>

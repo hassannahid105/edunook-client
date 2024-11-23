@@ -6,7 +6,7 @@ const Pdf = () => {
   return (
     <div
       style={{ height: "auto", width: "50%" }}
-      className="mx-auto my-10 p-10 bg-slate-400"
+      className="mx-auto my-10 p-10 bg-second"
     >
       <div style={{ width: "100%", height: "100%" }}>
         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">

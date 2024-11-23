@@ -39,7 +39,7 @@ const Register = () => {
     }
   };
   return (
-    <header className={`bg-gray-900`}>
+    <header className={`bg-second`}>
       <div className="container px-4 md:px-20 mx-auto pb-4">
         <nav className="flex flex-col py-4 md:py-6 sm:flex-row sm:justify-between sm:items-center">
           <Link to="/">
@@ -69,7 +69,7 @@ const Register = () => {
             </h2>
 
             <h3 className="mt-2 text-xl md:text-2xl font-semibold text-gray-100">
-              EDU NOOK <span className="text-blue-400"> Community</span>
+              EDU NOOK <span className="text-black"> Community</span>
             </h3>
 
             <p className="mt-4 text-gray-100">
@@ -131,7 +131,7 @@ const Register = () => {
 
                     <button
                       type="submit"
-                      className="px-6 py-2 font-medium text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700"
+                      className="px-6 py-2 font-medium text-white transition-colors duration-300 transform bg-main rounded-md hover:bg-gray-800 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-800 dark:focus:bg-gray-700"
                     >
                       Sign Up
                     </button>
