@@ -16,8 +16,8 @@ const AssignmentCard = ({ assignment, handleDelete, handleUpdate }) => {
   } = assignment;
   const { user } = useAuth();
   return (
-    <div className="shadow-lg relative bg-gray-100">
-      <figure className="h-[250px]">
+    <div className="shadow-lg relative bg-gray-100 overflow-hidden">
+      <figure className="h-[250px] hover:scale-110 transition-all duration-150 ">
         <img src={thumbnail} alt="" />
       </figure>
       <div className="">

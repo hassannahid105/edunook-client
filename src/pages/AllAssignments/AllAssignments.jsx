@@ -70,23 +70,35 @@ const AllAssignments = () => {
   };
   return (
     <div className="p-4 mb-4">
-      <h2>All Assignments come here now</h2>
-      <div className="w-full text-center flex gap-8 items-center justify-center">
-        <select
-          onChange={(e) => handleSortByDifficulty(e.target.value)}
-          className="select select-primary w-full max-w-xs"
-        >
-          <option selected value="easy">
-            Easy
-          </option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-        <button className="btn btn-primary" onClick={() => getData()}>
-          Reset
-        </button>
+      <div className="grid grid-cols-2 e-container py-10 justify-center items-center">
+        <div className="">
+          <h2 className="text-4xl font-bold text-gray-600 mb-4">
+            All Assignments
+          </h2>
+          <p>
+            Browse all available assignments <br /> in one place.
+          </p>
+        </div>
+        <div className="w-full text-center flex items-center">
+          <select
+            onChange={(e) => handleSortByDifficulty(e.target.value)}
+            className="select select-success w-full max-w-xs rounded-r-none selection:select::outline-none"
+          >
+            <option selected value="easy">
+              Easy
+            </option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <button
+            onClick={() => getData()}
+            className="uppercase  bg-second rounded-r-md hover:transition-all hover:duration-300 hover:text-main  flex items-center gap-2 py-[10px] px-6 hover:bg-yellow-400 justify-center text-black font-bold text-sm md:text-xl tracking-wide"
+          >
+            Reset
+          </button>
+        </div>
       </div>
-      <div></div>
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 max-w-7xl mx-auto mt-12">
         {assignments.map((assignment) => (
           <AssignmentCard
