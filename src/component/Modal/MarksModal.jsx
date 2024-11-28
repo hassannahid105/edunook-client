@@ -32,10 +32,11 @@ export default function MarksModal({
     const marks = form.marks.value;
     const note = form.note.value;
     const givingMarks = {
-      marks,
-      note,
+      obtainMarks: marks,
+      feedback: note,
       status: "completed",
     };
+    console.log(givingMarks);
     // if (marks < 0) {
     //   return;
     // }
@@ -95,7 +96,7 @@ export default function MarksModal({
                     <span className="text-2xl">
                       <FaRegUser />
                     </span>
-                    <button>{examinee.examineeName}</button>
+                    <button>{examinee?.examineeName}</button>
                   </div>
                 </div>
               </div>

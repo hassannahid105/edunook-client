@@ -28,10 +28,10 @@ const AssignmentSubmit = () => {
     getData();
   }, []);
   // !
-  console.log(examiner?.user?.userEmail);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (examiner === user.email) {
+    if (examiner?.user?.userEmail === user.email) {
       return toast.error(" You cannot submit an assignment that you created.");
     }
     const form = e.target;
@@ -46,7 +46,7 @@ const AssignmentSubmit = () => {
       examinerMarks: examiner.marks,
       status: "pending",
       examinee: {
-        examineeEmail: examiner.user.userEmail,
+        examineeEmail: user?.email,
         examineeName: user?.displayName,
       },
     };
@@ -61,9 +61,8 @@ const AssignmentSubmit = () => {
           { duration: 6000 }
         );
       }
-      navigate("/allsubmitted");
+      navigate("/myassignment");
       toast.success("Assignment added successful");
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

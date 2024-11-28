@@ -13,7 +13,6 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut();
   };
-
   return (
     <nav className=" fixed w-full z-20 bg-main shadow-md shadow-[#596869] text-gray-600 md:text-white dark:bg-gray-800">
       <div className="e-container h-24 mx-auto md:flex justify-between items-center">
@@ -179,13 +178,17 @@ const Navbar = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   className="avatar hidden md:block md:pr-4"
                 >
-                  <div className="hover:ring-4  duration-200 ring-second ring-offset-base-200 w-12 rounded-full ring-offset-2 transform ">
-                    <img
-                      title={user?.displayName}
-                      src={user?.photoURL}
-                      alt="Profile Picture"
-                    />
-                  </div>
+                  {user ? (
+                    <div className="hover:ring-4  duration-200 ring-second ring-offset-base-200 w-12 rounded-full ring-offset-2 transform ">
+                      <img
+                        title={user?.displayName}
+                        src={user.photoURL}
+                        alt="Profile Picture"
+                      />
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 {/* Dropdown menu */}
                 {isOpen && (

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import AssignmentTable from "./AssignmentTable";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import MarksModal from "../../component/Modal/MarksModal";
 
 const SubmitAssignment = () => {
   const [assignments, setAssignments] = useState([]);
@@ -12,12 +13,13 @@ const SubmitAssignment = () => {
     const { data } = await axios(
       `http://localhost:5000/allsubmited?email=${user?.email}`
     );
-    setAssignments(data);
+    const pending = data.filter((assign) => assign.status === "pending");
+    setAssignments(pending);
   };
   useEffect(() => {
     getData();
-  }, [user]);
-  // ! delete assignment
+  }, [user, assignments]);
+  //  delete assignment
   // const handleDelete = async (id) => {
   //   try {
   //     const { data } = await axios.delete(
@@ -45,6 +47,8 @@ const SubmitAssignment = () => {
   //     toast.error(err.message);
   //   }
   // };
+  // ! ================================worikng====================
+
   return (
     <section className="container px-4 mx-auto max-w-7xl">
       <div className="flex items-center gap-x-3">
@@ -69,10 +73,6 @@ const SubmitAssignment = () => {
                       className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       <div className="flex items-center gap-x-3">
-                        <input
-                          type="checkbox"
-                          className="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
-                        />
                         <span>Title</span>
                       </div>
                     </th>
@@ -82,7 +82,7 @@ const SubmitAssignment = () => {
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       <button className="flex items-center gap-x-2">
-                        <span>Difficulty</span>
+                        <span>Examinee Name</span>
 
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const SubmitAssignment = () => {
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
-                      Resources
+                      Examinee Email
                     </th>
 
                     <th
@@ -119,7 +119,7 @@ const SubmitAssignment = () => {
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
-                      <span className="">Edit</span>
+                      <span className="">Given Marks</span>
                     </th>
                   </tr>
                 </thead>
@@ -129,7 +129,7 @@ const SubmitAssignment = () => {
                     <AssignmentTable
                       key={assignment._id}
                       assignment={assignment}
-                      // handleDelete={handleDelete}
+                      getData={getData}
                     ></AssignmentTable>
                   ))}
                 </tbody>

@@ -31,7 +31,7 @@ const AllSubmitAssignment = () => {
       <div className="e-container">
         <div className="text-center  mb-12">
           <h2 className="text-4xl font-bold text-gray-600 mb-4">
-            All Assignments
+            Submited All Assignments
           </h2>
           <p className="mb-4">Browse all available assignments in one place.</p>
         </div>
