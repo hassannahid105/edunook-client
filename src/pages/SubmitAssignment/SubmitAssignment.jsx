@@ -2,14 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import MyAssignmentTable from "./MyAssignmentTable";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const SubmitAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
   const getData = async () => {
-    const { data } = await axios(
-      `http://localhost:5000/allsubmited?email=${user?.email}`
-    );
+    const { data } = await axiosInstance(`/allsubmited?email=${user?.email}`);
     setAssignments(data);
   };
   useEffect(() => {

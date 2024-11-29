@@ -14,7 +14,7 @@ const Navbar = () => {
     logOut();
   };
   return (
-    <nav className=" fixed w-full z-20 bg-main shadow-md shadow-[#596869] text-gray-600 md:text-white dark:bg-gray-800">
+    <nav className=" fixed w-full z-20  shadow-md shadow-[#596869] text-black bg-white md:text-black dark:bg-gray-800">
       <div className="e-container h-24 mx-auto md:flex justify-between items-center">
         <div className="flex items-center justify-between lg:text-2xl px-4 sm:w-full pt-4 md:pt-0">
           <Link to="/" className="flex items-end font-bold ">
@@ -111,7 +111,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               {/* new here */}
-              <a className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+              <a className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black">
                 <div className="mx-1">
                   <h1 className="text-sm font-semibold dark:text-gray-200 uppercase mb-2">
                     {user?.displayName}
@@ -126,7 +126,7 @@ const Navbar = () => {
               <hr className="border-gray-200 dark:border-gray-700 " />
               <Link
                 to="/createassignment"
-                className="flex items-center pl-3 px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center pl-3 px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
               >
                 {/* Profile SVG path here */}
                 <span className="mx-1 flex items-center justify-center gap-2">
@@ -135,7 +135,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/submitassignments"
-                className="flex items-center p-3 text-sm pl-3 text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center p-3 text-sm pl-3 text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
               >
                 {/* Settings SVG path here */}
 
@@ -146,7 +146,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to={"/myassignment"}
-                className="flex items-center  pl-3 p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex items-center  pl-3 p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
               >
                 <span className="mx-1 flex items-center justify-center gap-2">
                   <CiCirclePlus />
@@ -156,7 +156,7 @@ const Navbar = () => {
               <hr className="border-gray-200 dark:border-gray-700" />
               <button
                 onClick={handleLogOut}
-                className="flex w-full  pl-3 items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                className="flex w-full  pl-3 items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
               >
                 <span className="mx-1 flex items-center justify-center gap-2">
                   <IoLogOutOutline />
@@ -197,7 +197,7 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     {/* new here */}
-                    <a className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <a className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black">
                       <div className="mx-1">
                         <h1 className="text-sm font-semibold dark:text-gray-200 uppercase mb-2">
                           {user?.displayName}
@@ -212,7 +212,7 @@ const Navbar = () => {
                     <hr className="border-gray-200 dark:border-gray-700 " />
                     <Link
                       to="/createassignment"
-                      className="flex items-center pl-3 px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      className="flex items-center pl-3 px-3 py-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
                     >
                       {/* Profile SVG path here */}
                       <span className="mx-1 flex items-center justify-center gap-2">
@@ -221,7 +221,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/submitassignments"
-                      className="flex items-center p-3 text-sm pl-3 text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      className="flex items-center p-3 text-sm pl-3 text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
                     >
                       {/* Settings SVG path here */}
 
@@ -232,7 +232,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to={"/myassignment"}
-                      className="flex items-center  pl-3 p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      className="flex items-center  pl-3 p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
                     >
                       <span className="mx-1 flex items-center justify-center gap-2">
                         <CiCirclePlus />
@@ -242,7 +242,7 @@ const Navbar = () => {
                     <hr className="border-gray-200 dark:border-gray-700" />
                     <button
                       onClick={handleLogOut}
-                      className="flex w-full  pl-3 items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                      className="flex w-full  pl-3 items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-black"
                     >
                       <span className="mx-1 flex items-center justify-center gap-2">
                         <IoLogOutOutline />

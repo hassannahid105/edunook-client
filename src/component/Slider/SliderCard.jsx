@@ -11,19 +11,19 @@ const SliderCard = ({ image, text }) => {
       >
         <div className="flex justify-center md:justify-start pb-10 md:pb-0 lg:items-center md:items-start h-full bg-gray-900/70 ">
           <div className="e-container">
-            <div className=" text-center md:text-start px-8 md:w-[50%] mt-10">
-              <h1 className="text-xl font-semibold text-white lg:text-4xl line_height">
+            <div className=" text-center md:text-start px-4 md:px-8 md:w-[50%] mt-10">
+              <h1 className="text-xl font-semibold text-white lg:text-4xl  md:line_height">
                 {text}
               </h1>
               <p className="text-sm font-semibold text-white lg:text-2xl mt-3">
                 Elevate your skills and enjoy the journey of learning, where
                 learning meets passion.
               </p>
-              <div className="flex flex-col md:flex-row items-center  gap-4">
-                <button className="uppercase h-[68px] hover:bg-second hover:transition-all hover:duration-300   mt-6 flex items-center gap-2 py-6 px-6 bg-yellow-400 justify-center text-black font-bold text-sm md:text-xl tracking-wide">
+              <div className="flex flex-col md:flex-row items-center  gap-1 md:gap-4">
+                <button className="w-6/12 uppercase h-[68px] hover:bg-second hover:transition-all hover:duration-300 mt-6 flex items-center gap-2 py-6 px-6 bg-yellow-400 justify-center text-black font-bold text-sm md:text-lg tracking-wide">
                   Get Started
                 </button>
-                <button className="uppercase h-[68px] hover:text-main  hover:transition-all hover:duration-300   mt-6 flex items-center gap-2 py-6 px-6 bg-white justify-center text-black font-bold text-sm md:text-xl tracking-wide">
+                <button className="w-6/12 uppercase h-[68px] hover:text-main  hover:transition-all hover:duration-300   mt-6 flex items-center gap-2 py-6 px-6 bg-white justify-center text-black font-bold text-sm md:text-lg tracking-wide">
                   Browse Assignment
                   <FaChevronRight />
                 </button>
@@ -40,7 +40,7 @@ const SliderCard = ({ image, text }) => {
                     <FaCirclePlay />
                   </div>
                 </div>
-                <p className="text-2xl font-bold">
+                <p className="text-lg md:text-2xl font-bold">
                   Join 750+ members and <br /> enjoy the benefits.
                 </p>
               </div>

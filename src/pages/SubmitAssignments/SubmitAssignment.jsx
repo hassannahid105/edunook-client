@@ -4,15 +4,14 @@ import AssignmentTable from "./AssignmentTable";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import MarksModal from "../../component/Modal/MarksModal";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const SubmitAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
   console.log(user);
   const getData = async () => {
-    const { data } = await axios(
-      `http://localhost:5000/allsubmited?email=${user?.email}`
-    );
+    const { data } = await axiosInstance(`/allsubmited?email=${user?.email}`);
     const pending = data.filter((assign) => assign.status === "pending");
     setAssignments(pending);
   };

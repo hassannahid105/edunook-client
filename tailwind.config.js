@@ -13,3 +13,4 @@ export default {
   },
   plugins: [require("daisyui")],
 };
+// https://preview.themeforest.net/item/avada-responsive-multipurpose-theme/full_screen_preview/2833226?_ga=2.166134590.108008397.1732843700-478794015.1718680210

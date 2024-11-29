@@ -3,10 +3,12 @@ import image from "../../assets/images/slider/slide3.jpg";
 import axios from "axios";
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const UpdateAssingment = () => {
   const { user: loginUser } = useAuth();
   const navigate = useNavigate();
+  const { data } = useLoaderData();
   const {
     _id,
     title,
@@ -17,8 +19,8 @@ const UpdateAssingment = () => {
     date,
     thumbnail,
     difficulty,
-  } = useLoaderData();
-
+  } = data;
+  console.log(resources, description);
   const handleUpdateAssignment = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -48,8 +50,8 @@ const UpdateAssingment = () => {
       user: { userName: name, userEmail: email },
     };
     try {
-      const { data } = await axios.patch(
-        `http://localhost:5000/assignments/update/${_id}`,
+      const { data } = await axiosInstance.patch(
+        `/assignments/update/${_id}`,
         updateObj
       );
       if (data.modifiedCount > 0) {

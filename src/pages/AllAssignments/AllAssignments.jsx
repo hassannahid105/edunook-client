@@ -1,15 +1,15 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AssignmentCard from "./AssignmentCard";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const AllAssignments = () => {
   const [assignments, setAssignments] = useState([]);
   const navigate = useNavigate();
   const getData = async () => {
     try {
-      const result = await axios("http://localhost:5000/assignments");
+      const result = await axiosInstance(`/assignments`);
       setAssignments(result.data);
     } catch (err) {
       console.log(err);
@@ -23,9 +23,7 @@ const AllAssignments = () => {
     console.log(email, id, carduser.userEmail);
     if (email === carduser.userEmail) {
       try {
-        const { data } = await axios.delete(
-          `http://localhost:5000/assignments/${id}`
-        );
+        const { data } = await axiosInstance.delete(`/assignments/${id}`);
         if (data.deletedCount > 0) {
           toast.success("Assignment deleted successfully");
           getData();
@@ -42,12 +40,11 @@ const AllAssignments = () => {
       );
     }
   };
+
   // update function
   const handleUpdate = async (id) => {
     try {
-      const { data } = await axios.patch(
-        `http://localhost:5000/assignments/${id}`
-      );
+      const { data } = await axiosInstance.patch(`/assignments/${id}`);
       if (data.deletedCount > 0) {
         toast.success("Assignment updated successfully.");
         getData();
@@ -60,8 +57,8 @@ const AllAssignments = () => {
   // update by selected option
   const handleSortByDifficulty = async (difficulty) => {
     try {
-      const result = await axios(
-        `http://localhost:5000/assignments?difficulty=${difficulty}`
+      const result = await axiosInstance(
+        `/assignments?difficulty=${difficulty}`
       );
       setAssignments(result.data);
     } catch (err) {
@@ -70,8 +67,8 @@ const AllAssignments = () => {
   };
   return (
     <div className="p-4 mb-4">
-      <div className="grid grid-cols-2 e-container py-10 justify-center items-center">
-        <div className="">
+      <div className="md:grid grid-cols-2 e-container py-10 justify-center items-center">
+        <div className="mb-6">
           <h2 className="text-4xl font-bold text-gray-600 mb-4">
             All Assignments
           </h2>

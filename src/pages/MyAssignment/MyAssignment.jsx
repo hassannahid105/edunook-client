@@ -2,21 +2,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import MyAssignmentTable from "./MyAssignmentTable";
+import axiosInstance from "../../component/hooks/useaxios";
 // Display the assignments that the user has taken on the "My Assignments" page.
 const MyAssignment = () => {
   const [assignments, setAssignments] = useState([]);
   const { user } = useAuth();
   const getData = async () => {
-    const { data } = await axios(
-      `http://localhost:5000/submited?email=${user?.email}`
-    );
+    const { data } = await axiosInstance(`/submited?email=${user?.email}`);
     setAssignments(data);
   };
   useEffect(() => {
     getData();
   }, [user]);
 
-  console.log(assignments);
   return (
     <section className="container px-4 mx-auto max-w-7xl min-h-screen mt-20">
       <div className="flex items-center gap-x-3">

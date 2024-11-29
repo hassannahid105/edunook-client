@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Test from "../../component/_test_/Test";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const CreateAssignment = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -35,10 +36,7 @@ const CreateAssignment = () => {
     };
     console.table(assignmentObj);
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/assignment",
-        assignmentObj
-      );
+      const { data } = await axiosInstance.post(`/assignment`, assignmentObj);
       if (data.acknowledged) {
         navigate("/allassignments");
         toast.success("Create Assignment successfully", {

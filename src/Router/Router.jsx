@@ -14,6 +14,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Test from "../component/_test_/Test";
 import MyAssignment from "../pages/MyAssignment/MyAssignment";
 import SubmitAssignment from "../pages/SubmitAssignments/SubmitAssignment";
+import axiosInstance from "../component/hooks/useaxios";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/details/${params.id}`),
+          axiosInstance(`/assignments/details/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/assignments/details/${params.id}`),
+          axiosInstance(`/assignments/details/${params.id}`),
       },
       {
         path: "createassignment",

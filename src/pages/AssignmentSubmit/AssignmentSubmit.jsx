@@ -4,6 +4,7 @@ import axios from "axios";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import image from "../../assets/images/slider/slide4.jpg";
 import toast from "react-hot-toast";
+import axiosInstance from "../../component/hooks/useaxios";
 
 const AssignmentSubmit = () => {
   const { user, isLoading } = useAuth();
@@ -19,10 +20,7 @@ const AssignmentSubmit = () => {
   // !
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(
-        `http://localhost:5000/assignments/details/${id}`
-      );
-      console.log(data);
+      const { data } = await axiosInstance(`/assignments/details/${id}`);
       setExaminer(data);
     };
     getData();
@@ -51,8 +49,8 @@ const AssignmentSubmit = () => {
       },
     };
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/submittedassignments",
+      const { data } = await axiosInstance.post(
+        `/submittedassignments`,
         submitObj
       );
       if (data.status === "unauthorized") {
@@ -61,7 +59,7 @@ const AssignmentSubmit = () => {
           { duration: 6000 }
         );
       }
-      navigate("/myassignment");
+      // navigate("/myassignment");
       toast.success("Assignment added successful");
     } catch (err) {
       console.log(err);

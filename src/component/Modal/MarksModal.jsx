@@ -6,10 +6,10 @@ import {
   Label,
   Textarea,
 } from "@headlessui/react";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { FaRegUser } from "react-icons/fa";
 import { MdPictureAsPdf } from "react-icons/md";
+import axiosInstance from "../hooks/useaxios";
 
 export default function MarksModal({
   isOpen,
@@ -45,8 +45,8 @@ export default function MarksModal({
     // }
     if (id) {
       try {
-        const { data } = await axios.patch(
-          `http://localhost:5000/assignments/marks/${id}`,
+        const { data } = await axiosInstance.patch(
+          `/assignments/marks/${id}`,
           givingMarks
         );
         if (data.modifiedCount > 0) {
