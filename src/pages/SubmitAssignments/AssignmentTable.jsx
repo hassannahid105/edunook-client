@@ -39,7 +39,7 @@ const AssignmentTable = ({ assignment, getData }) => {
         <td className="px-4 py-4 text-sm whitespace-nowrap">
           <div className="flex items-center gap-x-2">
             <p className="px-3 py-1 text-xs text-blue-500 rounded-full dark:bg-gray-800 bg-blue-100/60">
-              {examinerMarks}
+              {examinee?.examineeEmail}
             </p>
           </div>
         </td>

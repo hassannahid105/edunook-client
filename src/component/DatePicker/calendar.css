@@ -5,3 +5,11 @@
 .react-datepicker__month-container {
   width: 100%; /* Ensure the calendar fills the container */
 }
+@media (max-width: 786px) {
+  .react-datepicker {
+    width: 250px; /* Adjust the calendar container width */
+  }
+  .react-datepicker__month-container {
+    width: 100%; /* Ensure the calendar fills the container */
+  }
+}

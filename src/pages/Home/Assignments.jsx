@@ -26,10 +26,16 @@ const Assignments = () => {
     <div className="p-4 mb-4">
       <div className="e-container py-6 md:py-10 ">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-gray-600 md:mb-4">
-            Assignments
+          <h2 className="text-xl md:text-4xl font-bold text-gray-600 md:mb-4 mb-2">
+            Explore Top Assignments
           </h2>
-          <p>Browse all available assignments in one place.</p>
+          <p className="">
+            Discover the most popular and challenging assignments curated just
+            <br />
+            for you. From in-depth projects to skill-building tasks, these
+            <br />
+            assignments are designed to help you excel and push your limits.
+          </p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 max-w-7xl mx-auto md:mt-12">

@@ -50,9 +50,9 @@ const SubmitAssignment = () => {
 
   return (
     <section className="container px-4 mx-auto max-w-7xl">
-      <div className="flex items-center gap-x-3">
-        <h2 className="text-lg font-medium text-gray-800 dark:text-white">
-          My submitted assignment for all user
+      <div className="md:flex md:items-center gap-x-3">
+        <h2 className="text-lg font-medium text-gray-800 dark:text-white mb-2 md:mb-0">
+          Examinee submitted assignment
         </h2>
 
         <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
